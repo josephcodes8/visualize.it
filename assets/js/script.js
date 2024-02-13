@@ -21,7 +21,7 @@ generateButton.addEventListener("click", function () {
 
   // generate random Array with a size of 10
   const arr = generateRandomArray(array_size)
-  arrayEl.textContent = `Array [${arr}]`
+  arrayEl.textContent = `Array [${arr.toString()}]`
 
   const max = arr.reduce((a, b) => Math.max(a, b), -Infinity)
   const maxHeight = 30 // height of the maximum bar
