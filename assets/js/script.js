@@ -29,7 +29,7 @@ generateButton.addEventListener("click", function () {
   const barElements = arr
     .map((el) => {
       const height = Math.round((el * maxHeight) / max)
-      return `<div class="bar bar--h-${height}" height=${height}><span>${el}</span></div>`
+      return `<div class="bar bar--h-${height} "><span>${el}</span></div>`
     })
     .reduce((acc, cur) => acc + cur)
 
