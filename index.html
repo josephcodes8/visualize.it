@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <title>
+      Visualize.it | Visualize the Most Common Searching and Sorting Algorithms
+    </title>
+  </head>
+  <body>
+    <header>
+      <h1>Visualize<span>.</span>it</h1>
+      <p>Visualize Your 👌favorite Searching and Sorting algorithms</p>
+    </header>
+    <!-- MAIN CONTENT -->
+
+    <main class="main">
+      <fieldset>
+        <legend title="Choose the algorithm type you want to VISUALIZE.">
+          Choose Algorithm Type
+        </legend>
+        <section class="flex input-section">
+          <input
+            type="radio"
+            name="algorithm_type"
+            value="sorting"
+            checked
+            id="sorting_algorithm"
+            class="input--radio input--hidden"
+          />
+          <label
+            for="sorting_algorithm"
+            class="input--label input__label--styled input__label--styled--first"
+            >Sorting
+          </label>
+          <input
+            type="radio"
+            name="algorithm_type"
+            value="searching_algorithm"
+            id="searching_algorithm"
+            class="input--radio input--hidden"
+          />
+          <label
+            for="searching_algorithm"
+            class="input--label input__label--styled input__label--styled--last"
+            >Searching
+          </label>
+        </section>
+      </fieldset>
+      <fieldset>
+        <legend title="Choose the algorithm type you want to VISUALIZE.">
+          Choose Sorting Algorithm
+        </legend>
+        <div class="flex input__group">
+          <label class="input--label">
+            <input
+              type="radio"
+              name="algorithm_name"
+              value="quick"
+              checked
+              class="input--radio input--radio--styled"
+            /><span>Quick</span>
+          </label>
+          <label class="input--label">
+            <input
+              type="radio"
+              name="algorithm_name"
+              value="heap"
+              class="input--radio input--radio--styled"
+            /><span>Heap</span>
+          </label>
+          <label class="input--label">
+            <input
+              type="radio"
+              name="algorithm_name"
+              value="Bubble"
+              class="input--radio input--radio--styled"
+            /><span>Bubble</span>
+          </label>
+          <label class="input--label">
+            <input
+              type="radio"
+              name="algorithm_name"
+              value="Merge"
+              class="input--radio input--radio--styled"
+            /><span>Merge</span>
+          </label>
+          <label class="input--label">
+            <input
+              type="radio"
+              name="algorithm_name"
+              value="insertion"
+              class="input--radio input--radio--styled"
+            /><span>Insertion</span>
+          </label>
+          <label class="input--label">
+            <input
+              type="radio"
+              name="algorithm_name"
+              value="selection"
+              class="input--radio input--radio--styled"
+            /><span>Selection</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="input__group--number">
+        <label for="array_size"> Array Size</label>
+        <input
+          type="number"
+          name="array_size"
+          value="10"
+          step="5"
+          id="array_size"
+          class="input--number"
+        />
+        <span class="input--description"><strong>Default (10)</strong></span>
+      </div>
+      <div class="input__group--number">
+        <label for="sorting_speed"> Sorting Speed</label>
+        <input
+          type="number"
+          name="sorting_speed"
+          value="0.5"
+          step=".5"
+          id="sorting_speed"
+          class="input--number"
+        />
+        <span class="input--description"
+          >second / item sorted <strong>Default(0.5)</strong></span
+        >
+      </div>
+      <button class="btn--generate">👀 Visualize</button>
+    </main>
+
+    <!-- SECTION: visualize section -->
+    <div class="container">
+      <h2>Visualizing Heap Sort</h2>
+      <p>Array</p>
+      <section class="bars"></section>
+    </div>
+
+    <footer>
+      <small
+        >2024 &copy; copyrights reserved to <strong>Joseph Worku</strong>. don't
+        claim as your own.
+      </small>
+    </footer>
+  </body>
+  <script src="./assets/js/script.js"></script>
+</html>

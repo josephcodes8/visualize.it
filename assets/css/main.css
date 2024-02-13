@@ -1,0 +1,354 @@
+/* ELEMENTS RESET */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*::selection {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+:root {
+  --primary-color: rgb(255, 165, 0);
+  --dark: #333;
+  --font-family: "Poppins", sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.4rem;
+  padding: 0 6%;
+  font-family: var(--font-family);
+  line-height: 3.2rem;
+  color: var(--dark);
+}
+
+header {
+  padding: 4rem 0 1rem 0;
+  margin-bottom: 3rem;
+}
+
+h1 {
+  margin-bottom: 1.2rem;
+}
+
+h1 span {
+  color: var(--primary-color);
+}
+
+fieldset {
+  border: none;
+  margin-bottom: 1.5rem;
+}
+
+legend {
+  margin-bottom: 0.5rem;
+}
+
+/* UTILITY CLASSES */
+
+.flex {
+  display: flex;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.block {
+  display: block;
+}
+/* CLASSES */
+
+.input--hidden {
+  display: none;
+}
+
+.input-section {
+  text-wrap: nowrap;
+  margin: 0.5rem 0;
+  border: 0.01rem solid #efefef;
+  display: inline-block;
+  border-radius: 4rem;
+}
+
+.input__label--styled {
+  font-size: 1.4rem;
+  position: relative;
+  transition: background-color 0.3s ease-in;
+  display: inline-block;
+  padding: 0.5rem 2rem;
+  border: 0.01rem solid transparent;
+}
+
+.input__label--styled--first {
+  border-top-left-radius: 4rem;
+  border-bottom-left-radius: 4rem;
+}
+
+.input__label--styled--last {
+  border-top-right-radius: 4rem;
+  border-bottom-right-radius: 4rem;
+}
+
+.input--radio:checked + .input__label--styled {
+  background-color: rgba(255, 166, 0, 0.025);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.input__group {
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0 0 0 1rem;
+}
+
+.input--label {
+  padding: 0.5rem 2rem;
+}
+
+.input--label span {
+  margin-left: 1rem;
+}
+
+.input--radio {
+  appearance: none;
+  accent-color: var(--primary-color);
+}
+
+.input--radio--styled {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 10px;
+  border: 0.2rem solid #efefef;
+}
+
+.input--label:has(> .input--radio:checked) {
+  background-color: rgba(255, 166, 0, 0.025);
+  border-radius: 2rem;
+}
+
+.input--radio--styled:checked {
+  border-color: var(--primary-color);
+}
+
+.input--number {
+  font-family: var(--font-family);
+  font-size: 1.6rem;
+  margin: 1rem;
+  padding: 1rem 2rem;
+  border: 0.1rem solid #efefef;
+  border-radius: 0.5rem;
+  width: 10rem;
+  outline-color: orange;
+}
+
+.input__group--number {
+  margin: 1rem;
+}
+
+.input--description {
+  font-size: 1.2rem;
+  color: #aaa;
+}
+
+button {
+  font-size: 1.6rem;
+  font-family: var(--font-family);
+  display: inline-block;
+  padding: 1rem 5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: var(--primary-color);
+  border: 0.4rem solid transparent;
+  border-radius: 1rem;
+  transition: background-color 400ms ease-in;
+}
+
+button:hover {
+  background-color: orangered;
+}
+
+button:focus {
+  border-color: rgba(255, 68, 0, 0.413);
+}
+
+footer small {
+  color: var(--dark);
+  text-align: center;
+  display: block;
+  padding: 3rem;
+}
+
+.container {
+  margin: 3rem 0;
+}
+
+.container h2 {
+  padding: 2rem 0;
+}
+
+.container p {
+  margin-bottom: 2rem;
+}
+
+.bars {
+  border-bottom: 0.1rem solid #eee;
+  border-left: 0.1rem solid #eee;
+
+  background-color: rgba(255, 166, 0, 0.051);
+  padding: 2rem;
+  display: flex;
+  align-items: flex-end;
+  gap: 0.4rem;
+  justify-content: center;
+  border-top-right-radius: 5rem;
+}
+
+.bar {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  text-align: center;
+  background-color: rgba(10, 185, 150, 1);
+  width: 2rem;
+  max-width: 4rem;
+  min-height: 3rem;
+}
+
+.bar span {
+  display: none;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.bar--h-1 {
+  height: 1rem;
+}
+
+.bar--h-2 {
+  height: 2rem;
+}
+
+.bar--h-3 {
+  height: 3rem;
+}
+.bar--h-4 {
+  height: 4rem;
+}
+.bar--h-5 {
+  height: 5rem;
+}
+.bar--h-6 {
+  height: 6rem;
+}
+
+.bar--h-7 {
+  height: 7rem;
+}
+.bar--h-8 {
+  height: 8rem;
+}
+.bar--h-9 {
+  height: 9rem;
+}
+.bar--h-10 {
+  height: 10rem;
+}
+.bar--h-11 {
+  height: 11rem;
+}
+.bar--h-12 {
+  height: 12rem;
+}
+.bar--h-13 {
+  height: 13rem;
+}
+
+.bar--h-14 {
+  height: 14rem;
+}
+.bar--h-15 {
+  height: 15rem;
+}
+.bar--h-16 {
+  height: 16rem;
+}
+.bar--h-17 {
+  height: 17rem;
+}
+.bar--h-18 {
+  height: 18rem;
+}
+.bar--h-19 {
+  height: 19rem;
+}
+.bar--h-20 {
+  height: 20rem;
+}
+.bar--h-20 {
+  height: 20rem;
+}
+
+.bar--h-21 {
+  height: 21rem;
+}
+.bar--h-22 {
+  height: 22rem;
+}
+.bar--h-23 {
+  height: 23rem;
+}
+.bar--h-24 {
+  height: 24rem;
+}
+.bar--h-25 {
+  height: 25rem;
+}
+.bar--h-26 {
+  height: 26rem;
+}
+.bar--h-27 {
+  height: 27rem;
+}
+.bar--h-28 {
+  height: 28rem;
+}
+.bar--h-29 {
+  height: 29rem;
+}
+.bar--h-30 {
+  height: 30rem;
+}
+
+.bar--active {
+  background-color: var(--primary-color);
+}
+
+@media screen and (min-width: 42rem) {
+  :root {
+    font-size: 75%;
+  }
+
+  body {
+    padding: 0 5rem;
+  }
+
+  .bars {
+    gap: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 76.8rem) {
+  .bar span {
+    display: block;
+  }
+
+  .bars {
+    gap: 1rem;
+  }
+}
