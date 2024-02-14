@@ -185,7 +185,7 @@ footer {
 }
 
 .container__bars {
-  margin-left: 4rem;
+  margin-left: 2rem;
   position: relative;
   height: 400px;
   border-left: 0.1rem solid #eee;
@@ -330,5 +330,8 @@ footer {
     bottom: -4rem;
     left: 0%;
     color: #ccc;
+  }
+  .container__bars {
+    margin-left: 4rem;
   }
 }
