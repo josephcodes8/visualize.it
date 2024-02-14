@@ -29,7 +29,7 @@ body {
   flex-direction: column;
   height: 100%;
   row-gap: 3rem;
-  line-height: 2rem;
+  line-height: 2.6rem;
 }
 
 #logo {
@@ -167,6 +167,7 @@ footer {
   margin-top: 2rem;
   letter-spacing: 4px;
   margin-bottom: 2rem;
+  line-height: 3.2rem;
 }
 
 .wrapper {
