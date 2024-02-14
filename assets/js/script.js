@@ -1,48 +1,37 @@
 "use strict"
 
-const generateButton = document.querySelector(".btn--generate")
-const main = document.querySelector(".main")
-const container = document.querySelector(".container")
-const arrayEl = document.querySelector(".container p")
-const bars = document.querySelector(".bars")
-const arraySizeEl = document.querySelector("#array_size")
+// Utility functions
+const display = (element, style = "block") => (element.style.display = style)
+const hide = (element, style = "none") => (element.style.display = style)
+const select = (selector) => document.querySelector(selector)
 
-const init = function () {
-  container.style.display = "none"
-  main.style.display = "block"
-}
+// DOM Elements
+const containerEl = select("#container")
+const buttonEl = select("#button")
+const paragraphEl = select("#paragraph")
+const speedEl = select("#sorting-speed")
+const sizeEl = select("#array-size")
+const mainEl = select("#main")
+const sectionEl = select("#section")
+const loadingPage = select("#loading-page")
 
-// EVENT LISTENERS
-generateButton.addEventListener("click", function () {
-  main.style.display = "none"
-  container.style.display = "block"
-
-  const array_size = Number(arraySizeEl.value)
-
-  // generate random Array with a size of 10
-  const arr = generateRandomArray(array_size)
-  arrayEl.textContent = `Array [${arr.toString()}]`
-
-  const max = arr.reduce((a, b) => Math.max(a, b), -Infinity)
-  const maxHeight = 30 // height of the maximum bar
-
-  const barElements = arr
-    .map((el) => {
-      const height = Math.round((el * maxHeight) / max)
-      return `<div class="bar bar--h-${height} "><span>${el}</span></div>`
-    })
-    .reduce((acc, cur) => acc + cur)
-
-  bars.insertAdjacentHTML("afterbegin", barElements)
+// Event Listeners
+buttonEl.addEventListener("click", function () {
+  display(loadingPage)
+  setTimeout(() => {
+    select(".loading-page__heading").textContent = "Ready"
+    setTimeout(() => {
+      hide(mainEl)
+      hide(loadingPage)
+      display(sectionEl)
+    }, 500)
+  }, 1000)
 })
 
-const generateRandomArray = function (size) {
-  const generatedArray = []
-  for (let i = 0; i < size; i++) {
-    generatedArray.push(Math.trunc(Math.random() * 100) + 1)
-  }
-  return generatedArray
+const init = function () {
+  display(mainEl)
+  hide(sectionEl)
 }
 
-// start the application
+// INITIALZE app
 init()

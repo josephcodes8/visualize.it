@@ -14,104 +14,112 @@
   </head>
   <body>
     <header>
-      <h1>Visualize<span>.</span>it</h1>
+      <a href="./index.html" id="logo">Visualize<span>.</span>it</a>
       <p>Visualize Your 👌favorite Sorting algorithms</p>
     </header>
     <!-- MAIN CONTENT -->
 
-    <main class="main">
+    <main id="main">
       <fieldset>
         <legend title="Choose the algorithm type you want to VISUALIZE.">
           Choose Algorithm
         </legend>
-        <div class="flex input__group">
-          <label class="input--label">
+        <div class="input__group">
+          <label class="label label--radio">
             <input
               type="radio"
-              name="algorithm_name"
+              name="algorithm"
+              class="input input--radio"
               value="quick"
               checked
-              class="input--radio input--radio--styled"
-            /><span>Quick</span>
+            />
+            <span class="label__text">Quick</span>
           </label>
-          <label class="input--label">
+          <label class="label label--radio">
             <input
               type="radio"
-              name="algorithm_name"
+              name="algorithm"
+              class="input input--radio"
               value="heap"
-              class="input--radio input--radio--styled"
-            /><span>Heap</span>
+            />
+            <span class="label__text">Heap</span>
           </label>
-          <label class="input--label">
+          <label class="label label--radio">
             <input
               type="radio"
-              name="algorithm_name"
-              value="Bubble"
-              class="input--radio input--radio--styled"
-            /><span>Bubble</span>
+              name="algorithm"
+              class="input input--radio"
+              value="bubble"
+            />
+            <span class="label__text">Bubble</span>
           </label>
-          <label class="input--label">
+          <label class="label label--radio">
             <input
               type="radio"
-              name="algorithm_name"
-              value="Merge"
-              class="input--radio input--radio--styled"
-            /><span>Merge</span>
+              name="algorithm"
+              class="input input--radio"
+              value="merge"
+            />
+            <span class="label__text">Merge</span>
           </label>
-          <label class="input--label">
+          <label class="label label--radio">
             <input
               type="radio"
-              name="algorithm_name"
+              name="algorithm"
+              class="input input--radio"
               value="insertion"
-              class="input--radio input--radio--styled"
-            /><span>Insertion</span>
+            />
+            <span class="label__text">Insertion</span>
           </label>
-          <label class="input--label">
+          <label class="label label--radio">
             <input
               type="radio"
-              name="algorithm_name"
+              name="algorithm"
+              class="input input--radio"
               value="selection"
-              class="input--radio input--radio--styled"
-            /><span>Selection</span>
+            />
+            <span class="label__text">Selection</span>
           </label>
         </div>
       </fieldset>
 
-      <div class="input__group--number">
-        <label for="array_size"> Array Size</label>
+      <div>
+        <label class="label" for="array-size"> Array Size</label>
         <input
           type="number"
-          name="array_size"
+          name="arraySize"
+          class="input input--number"
           value="10"
           step="5"
-          id="array_size"
-          class="input--number"
+          id="array-size"
         />
-        <span class="input--description"><strong>Default (10)</strong></span>
+        <small>Default ( 10 )</small>
       </div>
-      <div class="input__group--number">
-        <label for="sorting_speed"> Sorting Speed</label>
+      <div>
+        <label for="sorting-speed" class="label"> Sorting Speed </label>
         <input
           type="number"
-          name="sorting_speed"
-          value="0.5"
-          step=".5"
-          id="sorting_speed"
-          class="input--number"
+          name="sortingSpeed"
+          class="input input--number"
+          value="1"
+          step="0.5"
+          id="sorting-speed"
         />
-        <span class="input--description"
-          >second / item sorted <strong>Default(0.5)</strong></span
-        >
+        <small>Default ( 1 Second / item sorted )</small>
       </div>
-      <button class="btn--generate">👀 Visualize</button>
+      <button id="button">👀 Visualize</button>
     </main>
 
     <!-- SECTION: visualize section -->
-    <div class="container">
-      <h2>Visualizing Heap Sort</h2>
-      <p>Array</p>
-      <section class="bars"></section>
-    </div>
+    <section id="section">
+      <p>
+        Watch how <strong>Quick Sort</strong> works on
+        <span>Unsorted array <strong>[1, 2, 3, 4, 5, 6]</strong></span>
+      </p>
+
+      <p id="paragraph"></p>
+      <div id="container" class="container container--bars"></div>
+    </section>
 
     <footer>
       <small
@@ -119,6 +127,23 @@
         claim as your own.
       </small>
     </footer>
+
+    <div id="loading-page" class="loading-page">
+      <div class="wrapper">
+        <svg width="100" height="100" viewBox="0 0 24 24">
+          <g class="spinner">
+            <circle
+              cx="12"
+              cy="12"
+              r="9.5"
+              fill="none"
+              stroke-width="1"
+            ></circle>
+          </g>
+        </svg>
+        <span class="loading-page__heading">Generating Array</span>
+      </div>
+    </div>
   </body>
   <script src="./assets/js/script.js"></script>
 </html>
