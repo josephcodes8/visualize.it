@@ -22,8 +22,7 @@ const getBars = (arr, max) => {
       2
     )}px"><span>${el}</span></div>`
   })
-  console.log(bars)
-  return bars.toString()
+  return bars.reduce((acc, cur) => acc + cur)
 }
 
 // DOM Elements

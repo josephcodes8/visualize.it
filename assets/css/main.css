@@ -235,11 +235,7 @@ footer {
 }
 
 .bar > span {
-  font-size: 1rem;
-  position: absolute;
-  bottom: -4rem;
-  left: 0%;
-  color: #ccc;
+  display: none;
 }
 
 .bar:first-child {
@@ -289,6 +285,12 @@ footer {
   padding: 1rem;
 }
 
+@media screen and (min-width: 42rem) {
+  .bars {
+    gap: 1rem;
+  }
+}
+
 @media screen and (min-width: 76.8rem) {
   :root {
     font-size: 75%;
@@ -315,5 +317,18 @@ footer {
   .container__sort-history {
     width: 33%;
     border-radius: 1rem;
+  }
+
+  .bars {
+    gap: 2rem;
+  }
+
+  .bar > span {
+    display: block;
+    font-size: 1rem;
+    position: absolute;
+    bottom: -4rem;
+    left: 0%;
+    color: #ccc;
   }
 }
