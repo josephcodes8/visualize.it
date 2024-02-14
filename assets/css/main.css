@@ -222,6 +222,7 @@ footer {
   display: flex;
   column-gap: 0.5rem;
   align-items: flex-end;
+  justify-content: space-around;
 }
 
 .bar {
@@ -321,6 +322,7 @@ footer {
 
   .bars {
     gap: 2rem;
+    justify-content: flex-start;
   }
 
   .bar > span {
