@@ -231,6 +231,15 @@ footer {
   background-color: rgba(10, 185, 150, 1);
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
+  position: relative;
+}
+
+.bar > span {
+  font-size: 1rem;
+  position: absolute;
+  bottom: -4rem;
+  left: 0%;
+  color: #ccc;
 }
 
 .bar:first-child {
@@ -297,6 +306,7 @@ footer {
   .container {
     display: flex;
     justify-content: space-between;
+    gap: 2rem;
   }
 
   .container__bars {
@@ -304,5 +314,6 @@ footer {
   }
   .container__sort-history {
     width: 33%;
+    border-radius: 1rem;
   }
 }
