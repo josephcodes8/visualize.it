@@ -19,7 +19,7 @@ const getBars = (arr, max) => {
   const bars = arr.map((el) => {
     const height = (el * 400) / max
     return `<div class="bar ${
-      el < 40 && "bar--current"
+      el < 150 && "bar--current"
     }" style="height:${height.toFixed(2)}px"><span>${el}</span></div>`
   })
   return bars.reduce((acc, cur) => acc + cur)
@@ -38,7 +38,7 @@ const arrayEl = select("#array-element")
 
 // Event Listeners
 buttonEl.addEventListener("click", function () {
-  const arr = getRandomNumbers(20, 1, 100)
+  const arr = getRandomNumbers(10, 50, 2150)
 
   const max = arr.reduce((a, b) => Math.max(a, b), -Infinity)
   const maxTenth = Math.ceil(max / 10) * 10
