@@ -3,7 +3,6 @@
 // Utility functions
 const display = (element, style = "block") => (element.style.display = style)
 const hide = (element, style = "none") => (element.style.display = style)
-
 const select = (selector) => document.querySelector(selector)
 
 const getRandomNumbers = function (n = 10, min = 1, max = 100) {
@@ -24,17 +23,6 @@ const getRandomNumbers = function (n = 10, min = 1, max = 100) {
   }
   return arr
 }
-
-const getBars = (arr, max) => {
-  const bars = arr.map((el) => {
-    const height = (el * 400) / max
-    return `<div class="bar ${
-      el < 150 && "bar--current"
-    }" style="height:${height.toFixed(2)}px"><span>${el}</span></div>`
-  })
-  return bars.reduce((acc, cur) => acc + cur)
-}
-
 // DOM Elements
 const containerEl = select("#container")
 const buttonEl = select("#button")
@@ -46,13 +34,43 @@ const sectionEl = select("#section")
 const loadingPage = select("#loading-page")
 const arrayEl = select("#array-element")
 
+let max, maxTenth, arr
+
+const renderBars = (arr, max, currentItems = []) => {
+  select("#bars").innerHTML = ""
+  const bars = arr.map((el, index) => {
+    const height = (el * 400) / max
+    return `<div class="bar ${
+      index === currentItems[0] || index === currentItems[1]
+        ? "bar--current"
+        : ""
+    }" style="height:${height.toFixed(2)}px"><span>${el}</span></div>`
+  })
+  return bars.reduce((acc, cur) => acc + cur)
+}
+
+const showInitalArray = function (array) {
+  hide(mainEl)
+  hide(loadingPage)
+  display(sectionEl)
+  arrayEl.textContent = array
+}
+
+const init = function () {
+  display(mainEl)
+  hide(sectionEl)
+}
+
+// INITIALZE app
+init()
+
 // Event Listeners
 buttonEl.addEventListener("click", function () {
   const arraySize = Number(sizeEl.value) // get the array size to be generated
   const selectedAlgorithm = select(".input--radio:checked").value // get the selected sorting algorithm
   const sortingSpeedInMS = speedEl.value * 1000 // get the sorting speed in milli seconds
 
-  const arr = getRandomNumbers(arraySize, 1, 10000)
+  arr = getRandomNumbers(arraySize)
 
   // calcualte the next multiple of 10 of the maximum number generated in the array
   const max = arr.reduce((a, b) => Math.max(a, b), -Infinity)
@@ -75,34 +93,19 @@ buttonEl.addEventListener("click", function () {
     setTimeout(() => {
       showInitalArray(`[${arr.join(", ")}]( size = ${arr.length} )`)
       setTimeout(() => {
-        window[selectedAlgorithm + "Sort"](sortingSpeedInMS) // call the selected algorithm dynamically
+        window[selectedAlgorithm + "Sort"](arr, sortingSpeedInMS) // call the selected algorithm dynamically
       }, 1000)
     }, 500)
   }, 1000)
 
-  select("#bars").insertAdjacentHTML("afterbegin", getBars(arr, maxTenth))
+  select("#bars").insertAdjacentHTML(
+    "afterbegin",
+    renderBars(arr, maxTenth, [1, 0])
+  )
 })
 
-const showInitalArray = function (array) {
-  hide(mainEl)
-  hide(loadingPage)
-  display(sectionEl)
-  arrayEl.textContent = array
-}
-
-const init = function () {
-  display(mainEl)
-  hide(sectionEl)
-}
-
-// INITIALZE app
-init()
-
 //  SORTING ALGORITHMS
-var insertionSort = function (sortingSpeedInMS) {
-  console.log(sortingSpeedInMS)
-  console.log("Insertion Sort is being done.")
-}
+var insertionSort = function (arr, sortingSpeedInMS) {}
 
 var selectionSort = function (sortingSpeedInMS) {
   console.log(sortingSpeedInMS)

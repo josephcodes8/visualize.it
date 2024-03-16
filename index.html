@@ -31,7 +31,6 @@
               name="algorithm"
               class="input input--radio"
               value="quick"
-              checked
             />
             <span class="label__text">Quick</span>
           </label>
@@ -68,6 +67,7 @@
               name="algorithm"
               class="input input--radio"
               value="insertion"
+              checked
             />
             <span class="label__text">Insertion</span>
           </label>
@@ -117,9 +117,30 @@
         Watch how <strong id="algorithm-name"></strong> works on
         <span>Unsorted array <strong id="array-element"></strong></span>
       </p>
+
       <p id="paragraph"></p>
 
       <div class="container">
+        <div class="container--legends">
+          <p class="legend__title">Legend</p>
+          <div class="legends">
+            <div class="legend">
+              <span class="legend__color bar--current"></span>
+              <span class="legend__description">Current Items</span>
+            </div>
+            <div class="legend">
+              <span class="legend__color bar--positionedIncorrectly"></span>
+              <span class="legend__description"
+                >Incorrectly Positioned Item</span
+              >
+            </div>
+            <div class="legend">
+              <span class="legend__color bar--swap"></span>
+              <span class="legend__description">Swapped Elements</span>
+            </div>
+          </div>
+        </div>
+
         <div class="container__bars">
           <span class="mark mark--top"> <span id="value--max"></span> </span>
           <span class="mark mark--middle">
@@ -128,6 +149,7 @@
 
           <div class="bars" id="bars"></div>
         </div>
+
         <div class="container__sort-history"></div>
       </div>
     </section>
